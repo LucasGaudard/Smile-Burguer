@@ -1,0 +1,360 @@
+
+/* ======== GLOBAL ======== */
+body {
+  background-color: #fff8ec; /* fundo suave, estilo hamburgueria artesanal */
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container geral */
+.container {
+  margin-top: 50px;
+}
+
+
+ .col-md-7 col-lg-6
+/* ======== NAVBAR ======== */
+.navbar {
+  background-color: #ffcf66 !important; /* amarelo quente */
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+.bg-body-tertiary {
+  border: #8b2e00 solid 1px;
+}
+
+.me-auto {
+  margin-left: 30px;
+}
+
+/* Marca da logo */
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8b2e00 !important; /* marrom escuro */
+  display: flex;
+  align-items: center;
+}
+
+/* Links do menu */
+.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #8b2e00 !important; /* marrom */
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #5c1f00 !important;
+  transform: translateY(-2px);
+}
+
+
+
+/* ======== HOME ======== */
+.row {
+  margin-top: 40px;
+}
+
+.titleHome {
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #8b2e00;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+p {
+  color: #4b2a0e;
+}
+
+
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-brand img {
+    width: 38px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ======== Promoções ======== */
+
+.promo-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.promo-card1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 80px;
+  background: #fcf5e6;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.promo-card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+}
+
+.promo-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+
+.preco {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.preco .old {
+  text-decoration: line-through;
+  color: #777;
+  margin-right: 8px;
+}
+
+.preco .new {
+  font-weight: bold;
+  color: #d10000;
+}
+
+.desc {
+  font-size: 16px;
+  color: #555;
+}
+
+
+/* ======== Cardápio ======== */
+
+/* TÍTULO DO CARDÁPIO */
+.cardapio h2 {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* CARD DO CARDÁPIO */
+.cardapio-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s ease;
+  margin-bottom: 20px;
+  max-height: 600px;
+  
+}
+
+.cardapio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGEM */
+.cardapio-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* DESCRIÇÃO */
+.cardapio-desc {
+  font-size: 16px;
+  color: #444;
+}
+
+/* PREÇO */
+.cardapio-preco {
+  
+  font-size: 25px;
+  font-weight: bold;
+  color: #d10000;
+}
+
+
+
+
+
+
+/* ======== QUEM SOMOS ======== */
+
+.quem-somos {
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.12);
+  margin-top: 60px;
+}
+
+.quem-somos-text p {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  color: #4b2a0e;
+  text-indent: 3%;
+  margin-bottom: 15px;
+}
+
+.quem-somos-img-wrapper {
+  background: #7e4d0e7c;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+
+.quem-somos-img-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+}
+
+.quem-somos-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .quem-somos {
+    padding: 25px;
+  }
+
+  .quem-somos-img-wrapper {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+/* ======== RESERVAS ======== */
+
+.reservas {
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.12);
+  margin-top: 60px;
+}
+
+.reserva-form {
+  background: #fcf5e6;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.12);
+}
+
+.reserva-form .form-group {
+  margin-bottom: 20px;
+}
+
+.reserva-form label {
+  font-weight: 600;
+  color: #8b2e00;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.reserva-form input,
+.reserva-form textarea {
+  border-radius: 12px;
+  border: 1px solid #d6c2a4;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #fff;
+}
+
+.reserva-form input:focus,
+.reserva-form textarea:focus {
+  border-color: #ffcf66;
+  box-shadow: 0px 0px 8px rgba(255, 207, 102, 0.5);
+}
+
+.btn-reservar {
+  width: 100%;
+  background: #8b2e00;
+  border: none;
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-reservar:hover {
+  background: #ffb72b;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .reserva-form {
+    padding: 20px;
+  }
+
+  .btn-reservar {
+    font-size: 16px;
+  }
+}
