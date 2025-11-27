@@ -12,6 +12,7 @@ import CrispyChicken from './assets/CrispyChicken.jpg';
 import VeggieSupreme from './assets/VeggieSupreme.png';
 import BBQCostela from './assets/BBQCostela.png';
 import SmileBurguer from './assets/SmileBurguer.png';
+import { useState } from 'react';
 
 
 
@@ -20,28 +21,78 @@ import SmileBurguer from './assets/SmileBurguer.png';
 
 function App() {
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+  setDarkMode(!darkMode);
+  document.body.classList.toggle("dark");
+  };
+
+  const [telefone, setTelefone] = useState("");
+  const [cpf, setCpf] = useState("");
 
 
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setTelefone(maskPhone(e.target.value));
+  };
+
+  const maskPhone = (value: string) => {
+    return value
+      .replace(/\D/g, '')
+      .replace(/^(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2')
+      .slice(0, 15);
+  };
+
+
+   const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCpf(maskCpf(e.target.value));  
+  };
+
+  const maskCpf = (value: string) => {
+  return value
+    .replace(/\D/g, '')               // remove tudo que não for número
+    .slice(0, 11)                     // limita a 11 dígitos
+    .replace(/(\d{3})(\d)/, '$1.$2')  // coloca o primeiro ponto
+    .replace(/(\d{3})(\d)/, '$1.$2')  // coloca o segundo ponto
+    .replace(/(\d{3})(\d{2})$/, '$1-$2'); // coloca o hífen
+};
   
+
 
   return (
 <Container>
     {/* INICIO DO MENU DE NAVEGAÇÃO */}
-    
-     <Navbar expand="lg" className="bg-body-tertiary">
-        <Navbar.Brand  href="#home"> <img src={logoSmileBurguer} alt="logoSmileBurguer" style={{width: '55px', marginLeft: '15px'}} />  </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto mx-auto gap-4">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#promocoes">Promoções</Nav.Link>
-            <Nav.Link href='#cardapio'>Cardápio</Nav.Link>
-            <Nav.Link href="#QuemSomos">Quem somos</Nav.Link>
-            <Nav.Link href="#Reserva">Reserva</Nav.Link>
-          </Nav>
-        </Navbar.Collapse> 
-     </Navbar>
-  
+ 
+  <div className="row">
+    <div className="col-md-11">
+        <Navbar expand="lg" className="bg-body-tertiary">
+          <Navbar.Brand href="#home" className='Reserva-text'>
+            <img src={logoSmileBurguer} alt="logo" style={{ width: '55px', marginLeft: '15px'}} />
+          </Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mx-auto gap-4">
+              <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#promocoes">Promoções</Nav.Link>
+                  <Nav.Link href="#cardapio">Cardápio</Nav.Link>
+                <Nav.Link href="#QuemSomos">Quem somos</Nav.Link>
+              <Nav.Link href="#Reserva">Reserva</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+
+      </Navbar>
+    </div>
+
+    <div className="col-md-1 d-flex align-items-center">
+      <button onClick={toggleDarkMode} className="btn-darkmode">
+        {darkMode ? "☀️ Light" : "🌙 Dark"}
+      </button>
+    </div>
+  </div>
     {/* FIM DO MENU DE NAVEGAÇÃO */}
 
 
@@ -239,7 +290,7 @@ function App() {
     {/* INICIO DO CODIGO DO BLOCO QUEM SOMOS */}
 
     <div className="quem-somos container mt-5">
-  <h2 id="QuemSomos">Quem Somos</h2>
+  <h2  className='Reserva-text'  id="QuemSomos"> <a href="#home"><img  src={logoSmileBurguer} alt="logoSmileBurguer" style={{width: '55px', marginLeft: '15px'}}/> </a> Quem Somos</h2>
 
   <div className="row align-items-center">
 
@@ -285,48 +336,48 @@ function App() {
 
      {/* INICIO DO CODIGO DO BLOCO RESERVAS */}
    
-
+ 
 <div className="reservas container mt-5">
-  <h2 id="Reserva">Reserve sua Mesa</h2>
+  <h2 className='Reserva-text' id="Reserva"> <a href="#home"><img  src={logoSmileBurguer} alt="logoSmileBurguer" style={{width: '55px', marginLeft: '15px'}}/> </a> Reserve sua Mesa</h2>
 
   <div className="row justify-content-center">
     <div className="col-md-8">
       <form className="reserva-form">
 
-        <div className="form-group">
-          <label>Nome completo</label>
-          <input type="text" className="form-control" placeholder="Seu nome" required />
-        </div>
+          <div className="form-group">
+            <label>Nome completo</label>
+            <input type="text" className="form-control" placeholder="Seu nome" required />
+          </div>
 
-        <div className="form-group">
-          <label>Telefone</label>
-          <input type="text" className="form-control" id="telefone"  name="telefone" placeholder="(99) 99999-9999"  required />
-        </div>
+              <div className="form-group">
+                <label>Telefone</label>
+                <input type="text" className="form-control" id="telefone"  name="telefone" placeholder="(99) 99999-9999" value={telefone} onChange={handlePhoneChange} required />
+              </div>
 
-        <div className="form-group">
-          <label>CPF</label>
-          <input type="text" className="form-control" id="cpf"  name="cpf" placeholder="xxx.xxx.xxx-xx"  required />
-        </div>
+                  <div className="form-group">
+                    <label>CPF</label>
+                    <input type="text" className="form-control" id="cpf"  name="cpf" placeholder="xxx.xxx.xxx-xx" value={cpf} onChange={handleCpfChange} required />
+                  </div>
 
-        <div className="form-group">
-          <label>Data da reserva</label>
-          <input type="date" className="form-control" required />
-        </div>
+                      <div className="form-group">
+                        <label>Data da reserva</label>
+                        <input type="date" className="form-control" required />
+                      </div>
 
-        <div className="form-group">
-          <label>Horário</label>
-          <input type="time" className="form-control" required />
-        </div>
+                  <div className="form-group">
+                    <label>Horário</label>
+                    <input type="time" className="form-control" required />
+                  </div>
 
-        <div className="form-group">
-          <label>Número de pessoas</label>
-          <input type="number" className="form-control" min="1" placeholder="Ex: 4 pessoas" required />
-        </div>
+              <div className="form-group">
+                <label>Número de pessoas</label>
+                <input type="number" className="form-control" min="1" placeholder="Ex: 4 pessoas" required />
+              </div>
 
-        <div className="form-group">
-          <label>Observações</label>
-          <textarea className="form-control" rows="3" placeholder="" ></textarea>
-        </div>
+          <div className="form-group">
+            <label>Observações</label>
+            <textarea className="form-control" rows="3" placeholder="" ></textarea>
+          </div>
 
         <button type="submit" className="btn-reservar">Confirmar Reserva</button>
       </form>

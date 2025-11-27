@@ -7,6 +7,10 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Container geral */
 .container {
   margin-top: 50px;
@@ -292,6 +296,26 @@ p {
   margin-top: 60px;
 }
 
+.Reserva-text {
+  display: flex;
+  align-items: center; /* alinha vertical */
+  justify-content: center; /* centraliza o título */
+
+  gap: 15px; /* distância entre logo e texto */
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  
+}
+
+.Reserva-text img {
+  position: absolute;
+  left: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
 .reserva-form {
   background: #fcf5e6;
   padding: 25px;
@@ -357,4 +381,102 @@ p {
   .btn-reservar {
     font-size: 16px;
   }
+}
+
+
+
+
+
+
+/* ======== DARK MODE PROFISSIONAL ======== */
+
+body.dark {
+  background-color: #121212; /* Preto suave premium */
+  color: #e6e6e6; /* Cinza claro elegante */
+  transition: 0.3s ease-in-out;
+}
+
+/* NAVBAR */
+body.dark .navbar {
+  background-color: #1c1c1c !important;
+  border-color: #2c2c2c !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+body.dark .nav-link {
+  color: #e6e6e6 !important;
+  transition: 0.2s;
+}
+
+body.dark .nav-link:hover {
+  color: #ffcf66 !important; /* Âmbar da marca */
+  transform: translateY(-2px);
+}
+
+/* LOGO (caso tenha texto junto) */
+body.dark .navbar-brand {
+  color: #ffcf66 !important;
+}
+
+/* CARDS */
+body.dark .promo-card,
+body.dark .cardapio-card,
+body.dark .quem-somos,
+body.dark .reservas,
+body.dark .reserva-form {
+  background-color: #1b1b1b;
+  color: #f1f1f1;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.7);
+  transition: 0.3s ease-in-out;
+}
+
+/* HEADINGS */
+body.dark h2,
+body.dark h3,
+body.dark h4 {
+  color: #ffffff;
+}
+
+/* PARÁGRAFOS */
+body.dark p {
+  color: #d4d4d4;
+}
+
+/* INPUTS */
+body.dark input,
+body.dark textarea {
+  background-color: #121212;
+  color: #ffffff;
+  border: 1px solid #3a3a3a;
+  transition: 0.2s;
+}
+
+body.dark input:focus,
+body.dark textarea:focus {
+  border-color: #ffcf66;
+  box-shadow: 0 0 8px rgba(255, 207, 102, 0.4);
+}
+
+/* BOTÃO DE RESERVA */
+body.dark .btn-reservar {
+  background-color: #ffcf66;
+  color: #1a1a1a;
+  border: none;
+  transition: 0.2s;
+}
+
+body.dark .btn-reservar:hover {
+  background-color: #ffba3a;
+}
+
+/* BOTÃO DARK MODE */
+body.dark .btn-darkmode {
+  background-color: #2a2a2a;
+  color: #ffcf66;
+  border: 1px solid #3b3b3b;
+}
+
+body.dark .btn-darkmode:hover {
+  background-color: #3a3a3a;
 }
