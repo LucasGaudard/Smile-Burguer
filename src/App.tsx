@@ -14,11 +14,6 @@ import BBQCostela from './assets/BBQCostela.png';
 import SmileBurguer from './assets/SmileBurguer.png';
 import { useState } from 'react';
 
-
-
-
-
-
 function App() {
 
   const [darkMode, setDarkMode] = useState(false);
@@ -131,12 +126,6 @@ function App() {
 </div>
     {/* FINAL DO CODIGO DO BLOCO HOME */}
 
-
-     
-      
-
-
-
     {/* INICIO DO CODIGO DO BLOCO DE PROMOÇÕES */}
 
       <div className="promocoes container mt-5">
@@ -203,10 +192,6 @@ function App() {
 
 
     {/* FIM DO CODIGO DO BLOCO DE PROMOÇÕES */}
-
-
-
-
 
     {/* INICIO DO CODIGO DO BLOCO DE CARDÁPIO */}
 
@@ -376,7 +361,7 @@ function App() {
 
           <div className="form-group">
             <label>Observações</label>
-            <textarea className="form-control" rows="3" placeholder="" ></textarea>
+            <textarea className="form-control" rows={3} placeholder="" ></textarea>
           </div>
 
         <button type="submit" className="btn-reservar">Confirmar Reserva</button>
